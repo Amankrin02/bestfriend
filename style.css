@@ -1,69 +1,112 @@
-/* General Reset */
-* {
+/* Google Font */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  height: auto;
-  min-height: 100vh;
-  overflow-y: auto;
-  font-family: 'Gentle Dad', sans-serif;
-  background-color: #1a1a1a;
+  font-family: 'Gentle Dad', cursive;
+  background-color: #0f0f0f;
   color: #fff;
+  overflow-x: hidden;
 }
 
-/* Container Styling */
+/* Heart background */
+.hearts {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  transform: rotate(45deg);
+  animation: floatUp 10s linear infinite;
+  opacity: 0.6;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff69b4;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Main container */
 .container {
-  padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+  padding: 40px 20px;
+  z-index: 1;
+  position: relative;
 }
 
-/* Poem Section */
+/* Poem */
 .poem {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
   line-height: 1.8;
-  font-size: 1.1rem;
-  text-align: left;
+  font-size: 1.1em;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
 }
 
-/* Tap screen link */
+/* Tap screen button */
 .tap-screen {
-  margin-top: 40px;
+  margin-top: 30px;
   text-align: center;
+  z-index: 2;
+  position: relative;
 }
 
 .tap-screen a {
   display: inline-block;
-  padding: 15px 30px;
-  background-color: #ff66b2;
+  padding: 14px 28px;
+  background-color: #ff69b4;
   color: white;
-  border-radius: 50px;
+  border-radius: 30px;
   text-decoration: none;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 15px rgba(255, 102, 178, 0.4);
+  font-size: 1.1em;
+  transition: all 0.3s ease;
+}
+
+.tap-screen a:hover {
+  background-color: #ff1493;
+  transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  margin-top: 60px;
   text-align: center;
-  color: #999;
-  font-size: 0.9rem;
-}
-
-/* Optional: Floating hearts or background animation */
-.hearts {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  /* Add background animation or floating hearts here */
+  margin-top: 40px;
+  color: #aaa;
+  font-size: 0.9em;
 }
