@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Surprise 💖</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: 'Gentle Dad', cursive;
+      color: white;
+    }
+    video {
+      width: 90%;
+      max-width: 500px;
+      border: 5px solid #ff69b4;
+      border-radius: 15px;
+    }
+    a {
+      margin-top: 20px;
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Gentle+Dad&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <video id="loveVideo" controls autoplay playsinline>
+    <source src="song1.mp4.mp4" type="audio/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <a href="index.html">⬅️ Go Back</a>
+
+  <script>
+    const video = document.getElementById('loveVideo');
+
+    // Try to go fullscreen when video starts playing
+    video.addEventListener('play', () => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen().catch((err) => {
+          console.log("Fullscreen not allowed automatically:", err.message);
+        });
+      } else if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen(); // iOS fallback
+      }
+    });
+  </script>
+</body>
+</html>

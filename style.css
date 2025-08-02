@@ -1,0 +1,69 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: auto;
+  min-height: 100vh;
+  overflow-y: auto;
+  font-family: 'Gentle Dad', sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Container Styling */
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Poem Section */
+.poem {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Tap screen link */
+.tap-screen {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.tap-screen a {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ff66b2;
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(255, 102, 178, 0.4);
+}
+
+/* Footer */
+footer {
+  margin-top: 60px;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Optional: Floating hearts or background animation */
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  /* Add background animation or floating hearts here */
+}
